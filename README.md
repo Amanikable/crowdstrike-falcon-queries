@@ -7,6 +7,7 @@ A collection of Splunk's Search Processing Language (SPL) for Threat Hunting wit
 Developed and maintained by [Intelligent Response](https://www.i-secure.co.th/author/intelligentresponse/) team, i-secure co., Ltd.
 
 - [crowdstrike-falcon-queries](#crowdstrike-falcon-queries)
+  - [AI-assisted hunting with Falcon MCP](#ai-assisted-hunting-with-falcon-mcp)
   - [Execution of Renamed Executables](#execution-of-renamed-executables)
   - [List of Living Off The Land Binaries with Network Connections](#list-of-living-off-the-land-binaries-with-network-connections)
   - [Suspicious Network Connections from Processes](#suspicious-network-connections-from-processes)
@@ -112,3 +113,21 @@ event_simpleName="RegSystemConfigValueUpdate" AND RegObjectName="*\RDP-Tcp" AND 
 This query is inspired by [MENASEC's research](https://blog.menasec.net/2019/02/threat-hunting-detecting-psloggedon.html)
 
 *No events related to this activity*
+
+## AI-assisted hunting with Falcon MCP
+
+This repository also includes the read-only Falcon MCP harness from
+[kyle9021/fal_con_2026_AI-Powered-Cloud-Security-Ops-Falcon-Mcp](https://github.com/kyle9021/fal_con_2026_AI-Powered-Cloud-Security-Ops-Falcon-Mcp)
+(MIT, see `third_party/falcon-mcp-harness/LICENSE`). It connects Claude Code to
+your Falcon tenant through the CrowdStrike `falcon-mcp` server. It denies writes
+by default, and every result it reports comes with an evidence table.
+
+```bash
+cp env.example .env && chmod 600 .env   # read-only API client, see docs/api-scopes.md
+./scripts/doctor.sh
+./scripts/test-guardrail.sh
+claude                                   # the posture brief appears on start
+```
+
+- Harness overview: [docs/harness-README.md](docs/harness-README.md) and [WORKSHOP.md](WORKSHOP.md)
+- **Already running a Falcon MCP server?** Follow [docs/parallel-falcon-mcp.md](docs/parallel-falcon-mcp.md) to run both side by side. The key step is naming your server `falcon-*` so the write guardrail covers it too.
