@@ -1,0 +1,17 @@
+{
+  "name": "crowdstrike-falcon-queries",
+  "owner": {
+    "name": "Amanikable"
+  },
+  "metadata": {
+    "description": "Claude Code plugins for threat hunting with CrowdStrike Falcon"
+  },
+  "plugins": [
+    {
+      "name": "falcon-hunting",
+      "source": "./plugins/falcon-hunting",
+      "description": "Connects Claude Code to CrowdStrike Falcon through falcon-mcp and ships the hunts from this repo as ready-to-run NG-SIEM (CQL) queries",
+      "category": "security"
+    }
+  ]
+}

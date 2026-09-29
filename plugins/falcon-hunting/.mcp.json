@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "falcon-mcp": {
+      "command": "uvx",
+      "args": ["falcon-mcp==0.19.0"],
+      "env": {
+        "FALCON_CLIENT_ID": "${FALCON_CLIENT_ID}",
+        "FALCON_CLIENT_SECRET": "${FALCON_CLIENT_SECRET}",
+        "FALCON_BASE_URL": "${FALCON_BASE_URL:-https://api.crowdstrike.com}",
+        "FALCON_MCP_MODULES": "${FALCON_MCP_MODULES:-ngsiem,detections,hosts,intel}",
+        "FALCON_MCP_READ_ONLY": "${FALCON_MCP_READ_ONLY:-true}"
+      }
+    }
+  }
+}

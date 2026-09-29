@@ -4,6 +4,12 @@
 
 A collection of Splunk's Search Processing Language (SPL) for Threat Hunting with CrowdStrike Falcon
 
+> **Claude Code plugin:** this repo is also a Claude Code plugin marketplace. The
+> [`falcon-hunting`](plugins/falcon-hunting) plugin connects Claude Code to Falcon through
+> [falcon-mcp](https://github.com/CrowdStrike/falcon-mcp) and runs these hunts as NG-SIEM
+> CQL queries. Install it with `/plugin marketplace add amanikable/crowdstrike-falcon-queries`,
+> then `/plugin install falcon-hunting@crowdstrike-falcon-queries`.
+
 Developed and maintained by [Intelligent Response](https://www.i-secure.co.th/author/intelligentresponse/) team, i-secure co., Ltd.
 
 - [crowdstrike-falcon-queries](#crowdstrike-falcon-queries)

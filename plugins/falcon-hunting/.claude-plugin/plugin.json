@@ -1,0 +1,12 @@
+{
+  "name": "falcon-hunting",
+  "version": "0.1.0",
+  "description": "Threat hunting with CrowdStrike Falcon: bundles the falcon-mcp server (read-only by default) and a skill that runs this repo's hunts as NG-SIEM CQL queries",
+  "author": {
+    "name": "Amanikable"
+  },
+  "homepage": "https://github.com/amanikable/crowdstrike-falcon-queries",
+  "repository": "https://github.com/amanikable/crowdstrike-falcon-queries",
+  "license": "MIT",
+  "keywords": ["crowdstrike", "falcon", "threat-hunting", "ngsiem", "cql", "mcp", "security"]
+}
